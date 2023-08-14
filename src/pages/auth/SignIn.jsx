@@ -1,8 +1,8 @@
 import Layout from "./Layout"
-import Title from "../components/title"
-import TextField from "../components/textField"
-import PrimaryBtn from "../components/primaryBtn"
-import LinkTo from "../components/linkTo"
+import Title from "../../components/title"
+import TextField from "../../components/textField"
+import PrimaryBtn from "../../components/primaryBtn"
+import LinkTo from "../../components/linkTo"
 
 export default function SignIn() {
   return (
