@@ -1,4 +1,4 @@
-import logo from '../assets/logo.png';
+import logo from '../../assets/logo.png';
 export default function Layout({children}) {
   return (
     <div className="grid grid-cols-2   bg-layout bg-no-repeat bg-cover  min-h-screen">
