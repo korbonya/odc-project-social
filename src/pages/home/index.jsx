@@ -5,9 +5,11 @@ import PrimaryBtn from "../../components/primaryBtn";
 import SecondaryBtn from "../../components/secondaryBtn";
 import PostCard from "../../components/postCard";
 import TextField from "../../components/textField";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
     const [posts, setPosts] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/posts')
@@ -21,8 +23,12 @@ export default function Home() {
       <header className="container mx-auto flex justify-between">
         <Title style={'!text-gray-600'} title="Bienvenu sur notre reseau social" />
         <div className="flex space-x-4">
-            <SecondaryBtn title="s'inscrire" />
-            <PrimaryBtn title="se connecter" />
+            <SecondaryBtn 
+            onClick={() => navigate('/signup')}
+            title="s'inscrire" />
+            <PrimaryBtn 
+            onClick={() => navigate('/signin')}
+            title="se connecter" />
         </div>
       </header>
       <main className="container mx-auto grid  md:grid-cols-3 gap-4 my-8">
@@ -35,7 +41,8 @@ export default function Home() {
             userName="Marima Soumah"
             userImage="https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659651_960_720.png"
             likes={10}
-            date="12/12/2021"
+            id={post.id}
+            date="il y a 2 jours"
             />) : <div>
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-20 w-20 mx-auto animate-spin text-gray-600" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M10 2a8 8 0 100 16 8 8 0 000-16zM8 9a2 2 0 114 0H8z" clipRule="evenodd" />

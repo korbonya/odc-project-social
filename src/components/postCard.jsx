@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
 export default function PostCard(props) {
   const { title, body, id, image, userName, userImage, likes, date } = props;
   return (
     <div>
+      <Link to={`/detail/${id}`}>
       <div className="flex flex-col items-center justify-center bg-white rounded-lg shadow-lg overflow-hidden">
         <img src={image} alt="post" className="w-full h-56 object-cover" />
         <div className="flex flex-col items-center justify-center p-4">
@@ -59,6 +61,7 @@ export default function PostCard(props) {
           </div>
         </div>
       </div>
+      </Link>
     </div>
   );
 }
